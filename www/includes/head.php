@@ -1,8 +1,8 @@
 <?php
-include_once(__DIR__ . '/../auto.php');
+include_once(__DIR__ . '/../vendor_class/autoload.php');
 ?>
 <link href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic%7CRusso+One%7CInconsolata" rel="stylesheet" type="text/css">
-<base href="<?php echo Config::$base_href; ?>" target="_self">
+<base href="<?php echo Config::$base_url; ?>" target="_self">
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="description" content="">

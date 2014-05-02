@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__ . '/../auto.php');
+include_once(__DIR__ . '/../vendor_class/autoload.php');
 ?>
 <header id="header" class="container">
     <div class="row">
