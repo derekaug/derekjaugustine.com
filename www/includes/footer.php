@@ -1,3 +1,6 @@
+<?php
+include_once(__DIR__ . '/../auto.php');
+?>
 <footer id="footer">
     <div class="container">
         <div class="row">

@@ -1,3 +1,6 @@
+<?php
+include_once(__DIR__ . '/../auto.php');
+?>
 <header id="header" class="container">
     <div class="row">
         <div class="col-md-6">
