@@ -7421,6 +7421,7 @@ a:focus {
   text-align: center;
   font-size: 1.2em;
   border: none;
+  text-shadow: 1px 1px 2px #353432;
   -webkit-transform: skew(-10deg);
   -moz-transform: skew(-10deg);
   -o-transform: skew(-10deg);
@@ -7431,10 +7432,10 @@ a:focus {
   -o-transform-origin: 50%;
   -ms-transform-origin: 50%;
   transform-origin: 50%;
-  -webkit-transition: background-color 0.25s linear;
-  -moz-transition: background-color 0.25s linear;
-  -o-transition: background-color 0.25s linear;
-  transition: background-color 0.25s linear;
+  -webkit-transition: background-color 0.25s linear, color 0.25s linear;
+  -moz-transition: background-color 0.25s linear, color 0.25s linear;
+  -o-transition: background-color 0.25s linear, color 0.25s linear;
+  transition: background-color 0.25s linear, color 0.25s linear;
 }
 .button span {
   display: inline-block;
@@ -7447,6 +7448,11 @@ a:focus {
 }
 .button:hover {
   background-color: #94ba65;
+}
+.button[disabled=disabled],
+.button:disabled {
+  color: #4e4d4a;
+  background-color: #353432;
 }
 #buttonSubmit {
   margin-top: 16px;

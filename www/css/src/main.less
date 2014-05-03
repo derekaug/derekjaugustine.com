@@ -210,9 +210,10 @@ a {
   text-align: center;
   font-size: 1.2em;
   border: none;
+  text-shadow: 1px 1px 2px @color-black-dark;
   .lh-transform(skew(-10deg));
   .lh-transform-origin(50%);
-  .lh-transition(background-color 0.25s linear);
+  .lh-transition(background-color 0.25s linear, color 0.25s linear);
 
   span {
     display: inline-block;
@@ -226,6 +227,11 @@ a {
   &:active {
   }
   &:visited {
+  }
+
+  &[disabled=disabled], &:disabled {
+    color: @color-black-light;
+    background-color: @color-black-dark;
   }
 }
 
