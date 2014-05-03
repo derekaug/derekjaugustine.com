@@ -46,6 +46,13 @@ body {
     position: relative;
     z-index: 2;
   }
+
+  &.about #header nav ul li .about,
+  &.work #header nav ul li .work,
+  &.email #header nav ul li .email {
+    // selectors are too specific for my tastes, refactor later
+    background-color: @color-green;
+  }
 }
 
 a {
@@ -61,6 +68,10 @@ a {
   &:active {
   }
   &:visited {
+  }
+  &:focus {
+    outline: 0;
+    .lh-box-shadow(none);
   }
 }
 
@@ -119,33 +130,13 @@ a {
     li {
       display: inline-block;
       margin-left: 12px;
+    }
 
-      a {
-        display: block;
-        margin: 0;
+    a {
+      width: 82px;
+
+      &:hover {
         color: #FFFFFF;
-        background-color: @color-blue-light;
-        padding: 6px 12px;
-        font-family: @font-headline;
-        width: 82px;
-        text-align: center;
-        font-size: 1.2em;
-        .lh-transform(skew(-10deg));
-        .lh-transform-origin(50%);
-        .lh-transition(background-color 0.25s linear);
-
-        span {
-          display: inline-block;
-          .lh-transform(skew(10deg));
-        }
-
-        &:hover {
-          background-color: @color-green;
-        }
-        &:active {
-        }
-        &:visited {
-        }
       }
     }
 
@@ -160,6 +151,7 @@ a {
   bottom: 0;
   height: @footer-height;
   width: 100%;
+  padding-top: 30px;
 
   #divSocialLinks {
     margin-bottom: 6px;
@@ -183,5 +175,83 @@ a {
   }
 }
 
+// form styles
+.form-container {
+  margin-bottom: 16px;
+  background-color: @input-bg;
+  .lh-transform(skew(-10deg));
+  .lh-transform-origin(50%);
+
+  .form-control {
+    .lh-transform(skew(10deg));
+    background-color: transparent;
+    border: none;
+  }
+
+  .form-control:focus {
+    outline: 0;
+    .lh-box-shadow(none);
+  }
+}
+
+#textareaBody {
+  height: 80px;
+  resize: none;
+}
+
+// button styles
+.button {
+  display: block;
+  margin: 0;
+  color: #FFFFFF;
+  background-color: @color-blue-light;
+  padding: 6px 12px;
+  font-family: @font-headline;
+  text-align: center;
+  font-size: 1.2em;
+  border: none;
+  .lh-transform(skew(-10deg));
+  .lh-transform-origin(50%);
+  .lh-transition(background-color 0.25s linear);
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    .lh-transform(skew(10deg));
+  }
+
+  &:hover {
+    background-color: @color-green;
+  }
+  &:active {
+  }
+  &:visited {
+  }
+}
+
+#buttonSubmit {
+  margin-top: 16px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  #header #divHeaderWrapper {
+    margin: 0;
+  }
+
+  #header nav ul {
+    text-align: right;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
 
 
