@@ -38,8 +38,11 @@ include_once(__DIR__ . '/../vendor_class/autoload.php');
         </div>
     </div>
 </footer>
+<?php include_once(__DIR__ . '/globals.php'); ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="/js/vendor/bootstrap.comb.js"></script>
+<script src="/js/dja.comb.js"></script>
 <script>
     (function (b, o, i, l, e, r) {
         b.GoogleAnalyticsObject = l;

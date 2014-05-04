@@ -1,5 +1,6 @@
 <?php
 include_once(__DIR__ . '/vendor_class/autoload.php');
+Session::init();
 $active_class = 'about';
 ?>
 <!DOCTYPE html>

@@ -1,5 +1,6 @@
 <?php
 include_once(__DIR__ . '/../vendor_class/autoload.php');
+Session::init();
 $active_class = 'email';
 ?>
 <!DOCTYPE html>
@@ -50,6 +51,8 @@ $active_class = 'email';
                         </div>
                     </div>
 
+                    <input type="hidden" name="output" value="redirect"/>
+                    <input type="hidden" name="redirect" value="<?php echo Config::$base_url; ?>email/"/>
                     <input type="hidden" name="action" value="email"/>
 
                     <button id="buttonSubmit" type="submit" class="button pull-right">
@@ -61,5 +64,8 @@ $active_class = 'email';
     </div>
 </div>
 <?php include_once(Config::$root . '/includes/footer.php'); ?>
+<script>
+    dja.init('email');
+</script>
 </body>
 </html>

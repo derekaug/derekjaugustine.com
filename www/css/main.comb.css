@@ -7398,6 +7398,14 @@ a:focus {
   -o-transform: skew(10deg);
   -ms-transform: skew(10deg);
   transform: skew(10deg);
+  -webkit-transform-origin: 50%;
+  -moz-transform-origin: 50%;
+  -o-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   background-color: transparent;
   border: none;
 }
@@ -7445,6 +7453,11 @@ a:focus {
   -o-transform: skew(10deg);
   -ms-transform: skew(10deg);
   transform: skew(10deg);
+  -webkit-transform-origin: 50%;
+  -moz-transform-origin: 50%;
+  -o-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  transform-origin: 50%;
 }
 .button:hover {
   background-color: #94ba65;
