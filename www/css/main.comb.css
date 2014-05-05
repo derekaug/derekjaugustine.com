@@ -7470,6 +7470,48 @@ a:focus {
 #buttonSubmit {
   margin-top: 16px;
 }
+.alert {
+  padding: 4px 28px 4px 8px;
+  color: #FFFFFF;
+}
+.alert:before {
+  font-family: 'FontAwesome';
+  margin-right: 4px;
+}
+.alert.alert-danger,
+.alert.alert-error {
+  background-color: #cc816f;
+  border-color: #c5715c;
+}
+.alert.alert-danger:before,
+.alert.alert-error:before {
+  content: '\f165';
+}
+.alert.alert-success {
+  background-color: #94ba65;
+  border-color: #7ba349;
+}
+.alert.alert-success:before {
+  content: '\f164';
+}
+.alert .close {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.alert .close:hover {
+  color: #353432;
+}
+.page-header {
+  margin-top: 22px;
+  margin-bottom: 11px;
+  border-bottom: 2px solid #2790b0;
+}
+.img-tech {
+  margin-bottom: 30px;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #header #divHeaderWrapper {

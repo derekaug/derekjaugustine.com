@@ -22,16 +22,16 @@ if (!empty($action)) {
 
         // check if request paramaters are valid
         Response::$data['success'] = true;
+        if (empty($name)) {
+            Response::$data['messages'][] = array('type'=>'error', 'message'=>'Name is required.');
+            Response::$data['success'] = false;
+        }
         if (empty($email)) {
             Response::$data['messages'][] = array('type'=>'error', 'message'=>'Email is required.');
             Response::$data['success'] = false;
         }
         if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             Response::$data['messages'][] = array('type'=>'error', 'message'=>'Email must be valid.');
-            Response::$data['success'] = false;
-        }
-        if (empty($name)) {
-            Response::$data['messages'][] = array('type'=>'error', 'message'=>'Name is required.');
             Response::$data['success'] = false;
         }
         if (empty($body)) {

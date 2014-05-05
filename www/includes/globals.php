@@ -1,11 +1,11 @@
 <?php
 include_once(__DIR__ . '/../vendor_class/autoload.php');
-$messages = Response::getSessionData();
+$data = Response::getSessionData();
 Response::clearSessionData();
 ?>
 <script>
     var GLOBALS = {
-        'messages': <?php echo json_encode($messages); ?>
+        'data': <?php echo json_encode($data); ?>
         <?php echo PHP_EOL; ?>
     };
 </script>

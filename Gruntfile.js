@@ -34,8 +34,18 @@ module.exports = function (grunt) {
                     {
                         expand: true,               // Enable dynamic expansion
                         cwd   : 'www/img/src/bg/',     // Src matches are relative to this path
-                        src   : ['*.jpg'],       // Actual patterns to match
+                        src   : ['*.jpg', '*.jpeg'],       // Actual patterns to match
                         dest  : 'www/img/bg/'          // Destination path prefix
+                    }
+                ]
+            },
+            png: {
+                files  : [
+                    {
+                        expand: true,               // Enable dynamic expansion
+                        cwd   : 'www/img/src/',     // Src matches are relative to this path
+                        src   : ['*.png'],       // Actual patterns to match
+                        dest  : 'www/img/'          // Destination path prefix
                     }
                 ]
             }
@@ -62,6 +72,7 @@ module.exports = function (grunt) {
                 globals: {
                     "$": false,
                     "jQuery": false,
+                    "Mustache": false,
                     "GLOBALS": false
                 }
             }
@@ -76,7 +87,7 @@ module.exports = function (grunt) {
                 ],
                 dest: 'www/js/dja.comb.js'
             },
-            bootstrap: {
+            vendor: {
                 src: [
                     'www/vendor/bootstrap/js/transition.js',
                     'www/vendor/bootstrap/js/alert.js',
@@ -89,9 +100,10 @@ module.exports = function (grunt) {
                     'www/vendor/bootstrap/js/popover.js',
                     'www/vendor/bootstrap/js/scrollspy.js',
                     'www/vendor/bootstrap/js/tab.js',
-                    'www/vendor/bootstrap/js/affix.js'
+                    'www/vendor/bootstrap/js/affix.js',
+                    'www/vendor/mustache/mustache.js'
                 ],
-                dest: 'www/js/vendor/bootstrap.comb.js'
+                dest: 'www/js/vendor.comb.js'
             }
         },
 
@@ -106,9 +118,9 @@ module.exports = function (grunt) {
                     'www/js/dja.min.js': ['www/js/dja.comb.js']
                 }
             },
-            bootstrap: {
+            vendor: {
                 files: {
-                    'www/js/vendor/bootstrap.min.js': ['www/js/vendor/bootstrap.comb.js']
+                    'www/js/vendor.min.js': ['www/js/vendor.comb.js']
                 }
             }
         },

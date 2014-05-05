@@ -21,7 +21,59 @@ $active_class = 'work';
     <?php include_once(Config::$root . '/includes/header.php'); ?>
     <div class="container">
         <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                <h2 class="page-header">Work</h2>
 
+                <h4>Developer at <span class="sr-only">Archrival</span></h4>
+                <a href="http://www.archrival.com/" target="_blank">
+                    <img class="img-responsive" src="/img/archrival.png" alt="Archrival"/>
+                </a>
+
+                <h5>Technologies</h5>
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="http://www.php.net/" target="_blank">
+                            <span class="sr-only">PHP</span>
+                            <img src="/img/src/php.png" class="img-responsive img-tech" alt="PHP"/>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="http://www.mysql.com/" target="_blank">
+                            <span class="sr-only">MySQL</span>
+                            <img src="/img/mysql.png" class="img-responsive img-tech" alt="MySQL"/>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <span class="sr-only">Javascript</span>
+                        <img src="/img/javascript.png" class="img-responsive img-tech" alt="Javascript"/>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="http://www.w3.org/TR/html5/" target="_blank">
+                            <span class="sr-only">HTML5</span>
+                            <img src="/img/html5.png" class="img-responsive img-tech" alt="HTML5"/>
+                        </a>
+                    </div>
+                </div>
+
+                <h5>Projects</h5>
+                <ul>
+                    <li>
+                        a web portal for brand advocates to participate in discussion with other advocates and compete to
+                        earn rewards from the brand
+                    </li>
+                    <li>
+                        an analytic platform for a brand to monitor their Facebook posts and determine whether they
+                        were meeting their social goals
+                    </li>
+                    <li>
+                        microsites and Facebook tabs for promoting a brand, product, or service through either an online
+                        contest or interactive online experience
+                    </li>
+                </ul>
+                <!--<h4>Software Development at</h4>
+                <img class="img-responsive" src="/img/unl.png" />-->
+            </div>
         </div>
     </div>
 </div>
