@@ -1,3 +1,7 @@
 web1:
   document_root: www
   php_version: 5.4.14
+
+web2:
+  document_root: test
+  php_version: 5.4.14
