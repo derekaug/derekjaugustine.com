@@ -1,0 +1,17 @@
+{
+  "name": "Derek J. Augustine",
+  "version": "0.0.0",
+  "authors": [
+    "Derek J. Augustine <augshow@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "~4.0.3",
+    "bootstrap": "~3.1.1",
+    "lesshat": "~3.0.0",
+    "modernizr": "~2.7.2",
+    "jquery": "~1.11.0",
+    "mustache": "~0.8.1"
+  }
+}
