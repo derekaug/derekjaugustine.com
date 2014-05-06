@@ -7509,8 +7509,73 @@ a:focus {
   margin-bottom: 11px;
   border-bottom: 2px solid #2790b0;
 }
-.img-tech {
-  margin-bottom: 30px;
+.div-techs:before,
+.div-favs:before,
+.div-techs:after,
+.div-favs:after {
+  content: " ";
+  display: table;
+}
+.div-techs:after,
+.div-favs:after {
+  clear: both;
+}
+.div-techs:before,
+.div-favs:before,
+.div-techs:after,
+.div-favs:after {
+  content: " ";
+  display: table;
+}
+.div-techs:after,
+.div-favs:after {
+  clear: both;
+}
+.div-techs a,
+.div-favs a {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #FFFFFF;
+}
+.div-techs a:hover,
+.div-favs a:hover {
+  border-color: #2790b0;
+}
+.div-techs .img-tech,
+.div-favs .img-tech,
+.div-techs .img-fav,
+.div-favs .img-fav {
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");
+  /* Firefox 3.5+ */
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  /* IE6+ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+.div-techs .img-tech:hover,
+.div-favs .img-tech:hover,
+.div-techs .img-fav:hover,
+.div-favs .img-fav:hover {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {

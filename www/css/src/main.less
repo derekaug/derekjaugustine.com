@@ -284,9 +284,42 @@ a {
   border-bottom: 2px solid @color-blue-light;
 }
 
-.img-tech {
-  margin-bottom: 30px;
+.div-techs, .div-favs {
+  .clearfix();
+
+  a {
+    display: block;
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #FFFFFF;
+
+    &:hover {
+      border-color: @color-blue-light;
+    }
+  }
+
+  .img-tech, .img-fav {
+    .dja-gray();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+
+    &:hover {
+      .dja-color();
+    }
+  }
 }
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
