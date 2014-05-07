@@ -18,8 +18,16 @@ class Config
     public static function init()
     {
         static::$root = __DIR__ . '/../';
-        $settings = json_decode(file_get_contents(static::$root . 'config.json'), true);
-        static::$smtp = $settings['smtp'];
+        static::$smtp = array(
+            'host' => 'in-v3.mailjet.com',
+            'port' => '587',
+            'auth' => array(
+                'type' => 'plain',
+                'user' => $_ENV['SMTP_USER'],
+                'pass' => $_ENV['SMTP_PASS'],
+                'ssl' => 'tls'
+            )
+        );
         static::$host = $_SERVER['SERVER_NAME'];
         static::$base_url = 'http://' . static::$host . '/';
         static::$body_class = 'bg-' . rand(1, 10);
