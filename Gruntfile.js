@@ -124,6 +124,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         watch : {
             less    : {
                 files  : ['www/css/src/*.less'],
@@ -133,8 +134,18 @@ module.exports = function (grunt) {
                 }
             },
             js      : {
-                files  : ['www/js/src/*.js'],
-                tasks  : ['jshint', 'concat', 'uglify']
+                files  : ['<%= concat.dja.src %>'],
+                tasks  : ['jshint', 'concat:dja', 'uglify:dja'],
+                options: {
+                    livereload: true
+                }
+            },
+            vendor_js  : {
+                files: ['<%= concat.vendor.src %>'],
+                tasks  : ['concat:vendor', 'uglify:vendor'],
+                options: {
+                    livereload: true
+                }
             },
             imagemin: {
                 files  : ['www/img/src/**/*'],
@@ -142,7 +153,14 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
+            },
+            grunt: {
+                files: ['Gruntfile.js'],
+                options: {
+                    livereload: false
+                }
             }
+
         }
     });
 
