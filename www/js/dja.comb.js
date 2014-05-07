@@ -2,7 +2,7 @@ var dja = {
     "init": function (page) {
         var self = this;
         self.tplMessage = $('#tplMessage').html();
-
+        // page setup
         switch (page) {
             case "email":
                 self.$buttonSubmit = $('#buttonSubmit');
@@ -34,6 +34,11 @@ var dja = {
         });
     },
 
+    /**
+     * checks to see current state on the element (button/anchor)
+     * @param $element
+     * @returns {boolean}
+     */
     "isLoading": function ($element) {
         return $element.attr('disabled') === true;
     },
