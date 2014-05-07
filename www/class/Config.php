@@ -12,20 +12,20 @@ class Config
     public static $contact_to;
     public static $contact_from;
     public static $host;
-
     public static $smtp;
+    public static $environment;
 
     public static function init()
     {
         static::$root = __DIR__ . '/../';
         $settings = json_decode(file_get_contents(static::$root . 'config.json'), true);
         static::$smtp = $settings['smtp'];
-
         static::$host = $_SERVER['SERVER_NAME'];
         static::$base_url = 'http://' . static::$host . '/';
         static::$body_class = 'bg-' . rand(1, 10);
         static::$contact_to = 'augshow@gmail.com';
         static::$contact_from = 'no-reply@' . static::$host;
+        static::$environment = 'development';
     }
 }
 
