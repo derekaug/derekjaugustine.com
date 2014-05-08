@@ -23,8 +23,8 @@ class Config
             'port' => '587',
             'auth' => array(
                 'type' => 'plain',
-                'user' => $_ENV['SMTP_USER'],
-                'pass' => $_ENV['SMTP_PASS'],
+                'user' => getenv('SMTP_USER'),
+                'pass' => getenv('SMTP_PASS'),
                 'ssl' => 'tls'
             )
         );
