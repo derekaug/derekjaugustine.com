@@ -4,7 +4,7 @@ use Zend\Mail\Transport\Smtp;
 use Zend\Mail\Transport\SmtpOptions;
 
 include_once(__DIR__ . '/../vendor_class/autoload.php');
-Session::init();
+Config::init();
 
 $action = Request::get('action');
 $messages = array();

@@ -1,6 +1,7 @@
 <?php
 include_once(__DIR__ . '/vendor_class/autoload.php');
-Session::init();
+Config::init();
+
 $active_class = 'about';
 $birth_time = 530663760;
 $birth_dtm = DateTime::createFromFormat('U', 530663760);
