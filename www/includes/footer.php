@@ -1,5 +1,7 @@
 <?php
 include_once(__DIR__ . '/../vendor_class/autoload.php');
+$vendor_js = '/js/vendor.' . Config::$asset_type . '.js';
+$dja_js = '/js/dja.' . Config::$asset_type . '.js';
 ?>
     <footer id="footer">
         <div class="container">
@@ -43,8 +45,8 @@ include_once(__DIR__ . '/../vendor_class/autoload.php');
 <?php include_once(__DIR__ . '/globals.php'); ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')</script>
-    <script src="/js/vendor.comb.js"></script>
-    <script src="/js/dja.comb.js"></script>
+    <script src="<?php echo $vendor_js; ?>"></script>
+    <script src="<?php echo $dja_js; ?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
