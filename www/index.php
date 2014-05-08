@@ -50,7 +50,7 @@ $favorites[] = array(
     'picture' => 'https://graph.facebook.com/141825782544283/picture?type=square'
 );
 $favorites[] = array(
-    'name=' => 'Beer',
+    'name' => 'Beer',
     'url' => 'https://www.facebook.com/pages/Beer/112570395422274',
     'picture' => 'https://graph.facebook.com/112570395422274/picture?type=square'
 );
