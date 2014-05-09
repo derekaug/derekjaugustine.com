@@ -56,8 +56,8 @@ $unl_tech = json_decode(file_get_contents(Config::$root . '/data/tech-unl.json')
                         to earn rewards from the brand
                     </li>
                     <li>
-                        a mobile website to facilitate an online photo clue based scavenger hunt for product
-                        in multiple countries at different times
+                        a mobile website to facilitate an photo-based scavenger hunt for product in multiple countries
+                        and languages
                     </li>
                     <li>
                         an analytical tool for a brand to monitor their Facebook posts and determine whether they
