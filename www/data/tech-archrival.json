@@ -1,0 +1,32 @@
+[
+    {
+        "name"   : "PHP",
+        "url"    : "http://www.php.net/",
+        "picture": "/img/src/php.png"
+    },
+    {
+        "name"   : "MySQL",
+        "url"    : "http://www.mysql.com/",
+        "picture": "/img/mysql.png"
+    },
+    {
+        "name"   : "HTML5",
+        "url"    : "http://www.w3.org/TR/html5/",
+        "picture": "/img/html5.png"
+    },
+    {
+        "name"   : "LESS",
+        "url"    : "http://lesscss.org/",
+        "picture": "/img/less.png"
+    },
+    {
+        "name"   : "Javascript",
+        "url"    : "http://en.wikipedia.org/wiki/JavaScript",
+        "picture": "/img/javascript.png"
+    },
+    {
+        "name"   : "Grunt.js",
+        "url"    : "http://gruntjs.com/",
+        "picture": "/img/grunt.png"
+    }
+]

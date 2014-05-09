@@ -75,6 +75,12 @@ a {
   }
 }
 
+ul {
+  li {
+    margin-bottom: 5px;
+  }
+}
+
 #header {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -284,26 +290,35 @@ a {
   border-bottom: 2px solid @color-blue-light;
 }
 
-.div-techs, .div-favs {
+.list {
+  margin: 0;
+  padding: 0;
   .clearfix();
+
+  li, ol {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
 
   a {
     display: block;
-    float: left;
-    margin-right: 8px;
-    margin-bottom: 8px;
     width: 50px;
     height: 50px;
-    overflow: hidden;
     position: relative;
     border: 2px solid #FFFFFF;
+    overflow: hidden;
 
     &:hover {
       border-color: @color-blue-light;
     }
   }
 
-  .img-tech, .img-fav {
+  .list-image {
     .dja-gray();
     position: absolute;
     top: 50%;

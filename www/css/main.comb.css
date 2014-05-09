@@ -7228,6 +7228,9 @@ a:focus {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+ul li {
+  margin-bottom: 5px;
+}
 #header {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -7509,48 +7512,48 @@ a:focus {
   margin-bottom: 11px;
   border-bottom: 2px solid #2790b0;
 }
-.div-techs:before,
-.div-favs:before,
-.div-techs:after,
-.div-favs:after {
+.list {
+  margin: 0;
+  padding: 0;
+}
+.list:before,
+.list:after {
   content: " ";
   display: table;
 }
-.div-techs:after,
-.div-favs:after {
+.list:after {
   clear: both;
 }
-.div-techs:before,
-.div-favs:before,
-.div-techs:after,
-.div-favs:after {
+.list:before,
+.list:after {
   content: " ";
   display: table;
 }
-.div-techs:after,
-.div-favs:after {
+.list:after {
   clear: both;
 }
-.div-techs a,
-.div-favs a {
+.list li,
+.list ol {
   display: block;
   float: left;
-  margin-right: 8px;
-  margin-bottom: 8px;
   width: 50px;
   height: 50px;
-  overflow: hidden;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+.list a {
+  display: block;
+  width: 50px;
+  height: 50px;
   position: relative;
   border: 2px solid #FFFFFF;
+  overflow: hidden;
 }
-.div-techs a:hover,
-.div-favs a:hover {
+.list a:hover {
   border-color: #2790b0;
 }
-.div-techs .img-tech,
-.div-favs .img-tech,
-.div-techs .img-fav,
-.div-favs .img-fav {
+.list .list-image {
   filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");
   /* Firefox 3.5+ */
   -webkit-filter: grayscale(100%);
@@ -7568,10 +7571,7 @@ a:focus {
   height: 50px;
   padding: 0;
 }
-.div-techs .img-tech:hover,
-.div-favs .img-tech:hover,
-.div-techs .img-fav:hover,
-.div-favs .img-fav:hover {
+.list .list-image:hover {
   -webkit-filter: none;
   -moz-filter: none;
   -ms-filter: none;

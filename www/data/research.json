@@ -1,0 +1,42 @@
+[
+    {
+        "name"   : "Vagrant",
+        "url"    : "https://www.vagrantup.com/",
+        "picture": "/img/vagrant.png"
+    },
+    {
+        "name"   : "node.js",
+        "url"    : "http://nodejs.org/",
+        "picture": "/img/nodejs.png"
+    },
+    {
+        "name"   : "require.js",
+        "url"    : "http://requirejs.org/",
+        "picture": "/img/requirejs.png"
+    },
+    {
+        "name"   : "Sass",
+        "url"    : "http://sass-lang.com/",
+        "picture": "/img/sass.png"
+    },
+    {
+        "name"   : "Android Development",
+        "url"    : "http://developer.android.com/index.html",
+        "picture": "/img/android.png"
+    },
+    {
+        "name"   : "hack",
+        "url"    : "http://hacklang.org/",
+        "picture": "/img/hack.png"
+    },
+    {
+        "name"   : "Data-Driven Documents",
+        "url"    : "http://d3js.org/",
+        "picture": "/img/d3.png"
+    },
+    {
+        "name"   : "Python",
+        "url"    : "https://www.python.org/",
+        "picture": "/img/python.png"
+    }
+]

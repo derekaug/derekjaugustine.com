@@ -1,0 +1,17 @@
+[
+    {
+        "name"   : "C#",
+        "url"    : "http://msdn.microsoft.com/en-us/library/67ef8sbd.aspx",
+        "picture": "/img/src/csharp.png"
+    },
+    {
+        "name"   : "Visual Basic",
+        "url"    : "http://msdn.microsoft.com/en-us/library/aa903378(v=vs.71).aspx",
+        "picture": "/img/src/visualbasic.png"
+    },
+    {
+        "name"   : "Microsoft .NET",
+        "url"    : "http://www.microsoft.com/net",
+        "picture": "/img/src/dotnet.png"
+    }
+]
