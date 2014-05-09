@@ -2,6 +2,9 @@
 include_once(__DIR__ . '/../vendor_class/autoload.php');
 Config::init();
 $active_class = 'work';
+//archrival tech
+$archrival_tech = json_decode(file_get_contents(Config::$root . '/data/tech-archrival.json'), true);
+$unl_tech = json_decode(file_get_contents(Config::$root . '/data/tech-unl.json'), true);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -26,32 +29,25 @@ $active_class = 'work';
 
                 <h4>Developer at <span class="sr-only">Archrival</span></h4>
                 <a href="http://www.archrival.com/" target="_blank">
+                    <span class="sr-only">Archrival</span>
                     <img class="img-responsive" src="/img/archrival.png" alt="Archrival"/>
                 </a>
 
                 <h5>Technologies</h5>
-
-                <div class="div-techs">
-                    <a href="http://www.php.net/" target="_blank">
-                        <span class="sr-only">PHP</span>
-                        <img src="/img/src/php.png" class="img-tech" alt="PHP"/>
-                    </a>
-
-                    <a href="http://www.mysql.com/" target="_blank">
-                        <span class="sr-only">MySQL</span>
-                        <img src="/img/mysql.png" class="img-tech" alt="MySQL"/>
-                    </a>
-
-                    <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">
-                        <span class="sr-only">Javascript</span>
-                        <img src="/img/javascript.png" class="img-tech" alt="JavaScript"/>
-                    </a>
-
-                    <a href="http://www.w3.org/TR/html5/" target="_blank">
-                        <span class="sr-only">HTML5</span>
-                        <img src="/img/html5.png" class="img-tech" alt="HTML5"/>
-                    </a>
-                </div>
+                <ul class="list">
+                    <ul class="list">
+                        <?php foreach ($archrival_tech as $item) { ?>
+                            <li>
+                                <a href="<?php echo $item['url']; ?>" title="<?php echo $item['name']; ?>"
+                                   target="_blank">
+                                    <span class="sr-only"><?php echo $item['name']; ?></span>
+                                    <img class="list-image" alt="<?php echo $item['name']; ?>"
+                                         src="<?php echo $item['picture']; ?>"/>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </ul>
 
                 <h5>Projects</h5>
                 <ul>
@@ -72,6 +68,67 @@ $active_class = 'work';
                         an online contest or interactive online experience
                     </li>
                 </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                <h4>Previously</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="h5">Software Development at <span class="sr-only">University of Nebraska–Lincoln</span></h4>
+                        <a href="http://www.unl.edu/" target="_blank">
+                            <span class="sr-only">University of Nebraska–Lincoln</span>
+                            <img class="img-responsive" src="/img/unl.png" alt="University of Nebraska–Lincoln"/>
+                        </a>
+
+                        <h5>Technologies</h5>
+                        <ul class="list">
+                            <ul class="list">
+                                <?php foreach ($unl_tech as $item) { ?>
+                                    <li>
+                                        <a href="<?php echo $item['url']; ?>" title="<?php echo $item['name']; ?>"
+                                           target="_blank">
+                                            <span class="sr-only"><?php echo $item['name']; ?></span>
+                                            <img class="list-image" alt="<?php echo $item['name']; ?>"
+                                                 src="<?php echo $item['picture']; ?>"/>
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </ul>
+                        <h5>Projects</h5>
+                        <ul>
+                            <li>
+                                a college-wide C# library for code reuse and organization
+                            </li>
+                            <li>
+                                an online college election system for chairs &amp; committees
+                            </li>
+                            <li>
+                                a surplus auction site used by multiple universities
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="h5">Freelance Developer in <span class="sr-only">Lincoln</span></h4>
+                        <a href="http://www.lincoln.org/" target="_blank">
+                            <span class="sr-only">Lincoln</span>
+                            <img class="img-responsive" src="/img/lincoln.png" alt="Lincoln"/>
+                        </a>
+                        <h5>Projects</h5>
+                        <ul>
+                            <li>
+                                an IRB approved research survey for a graduate student at the University of Nebraska–Lincoln
+                            </li>
+                            <li>
+                                a tool to track video views and reactions for a marketing firm
+                            </li>
+                            <li>
+                                various shell scripts and bug fixes through freelance websites
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
