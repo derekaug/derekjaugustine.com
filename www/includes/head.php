@@ -1,6 +1,7 @@
 <?php
 include_once(__DIR__ . '/../vendor_class/autoload.php');
-$main_css = '/css/main.' . Config::$asset_type . '.css';
+$main_cb = filemtime(Config::$root . '/css/main.' . Config::$asset_type . '.css');
+$main_css = '/css/main.' . Config::$asset_type . '.css?cb=' . $main_cb;
 ?>
 <link href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic%7CRusso+One%7CInconsolata" rel="stylesheet" type="text/css">
 <base href="<?php echo Config::$base_url; ?>" target="_self">
