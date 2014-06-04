@@ -26,7 +26,7 @@ $active_class = 'email';
 
                 <p>Want to get in touch? Shoot me an email by filling in the form below.</p>
 
-                <div id="divMessages"></div>
+                <div id="divMessages"><?php echo Response::getMessages(); ?></div>
 
                 <form id="formEmail" role="form" action="<?php echo Config::$base_url; ?>service/email.php"
                       method="post">
