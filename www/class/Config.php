@@ -12,6 +12,7 @@ class Config
     public static $contact_to;
     public static $contact_from;
     public static $host;
+    public static $port;
     public static $canonical_host;
     public static $smtp;
     public static $environment;
@@ -27,6 +28,8 @@ class Config
 
             // get host first
             static::$host = $_SERVER['SERVER_NAME'];
+            static::$port = $_SERVER['SERVER_PORT'];
+
             static::$canonical_host = 'derekjaugustine.com';
             switch (static::$host) {
                 case 'derekjaugustine.com':
@@ -59,7 +62,7 @@ class Config
                 )
             );
 
-            static::$base_url = 'http://' . static::$host . '/';
+            static::$base_url = 'http://' . static::$host . (static::$port !== 80 ? ':' . static::$port : '') . '/';
             static::$body_class = 'bg-' . rand(1, 10);
             static::$contact_to = 'augshow@gmail.com';
             static::$contact_from = 'no-reply@' . static::$host;

@@ -1,6 +1,7 @@
 {
     "require" : {
-        "zendframework/zend-mail": "2.3.*@dev"
+        "zendframework/zend-mail": "2.3.*@dev",
+        "mustache/mustache": "*"
     },
     "config"  : {
         "vendor-dir": "www/vendor_class/",

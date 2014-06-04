@@ -32,12 +32,28 @@ class Response
         }
     }
 
-    public static function getSessionData(){
+    public static function getMessages()
+    {
+        $rvalue = '';
+        $stored = self::getSessionData();
+        $messages = !empty($stored['messages']) ? $stored['messages'] : null;
+        $engine = new Mustache_Engine();
+        $template = file_get_contents(Config::$root . '/templates/message.mustache');
+        foreach($messages as $m){
+            $rvalue .= $engine->render($template, $m);
+        }
+        Session::set(static::SESSION_KEY, null);
+        return $rvalue;
+    }
+
+    public static function getSessionData()
+    {
         $val = Session::get(static::SESSION_KEY);
         return !empty($val) ? unserialize($val) : null;
     }
 
-    public static function clearSessionData(){
+    public static function clearSessionData()
+    {
         Session::set(static::SESSION_KEY, null);
     }
 }

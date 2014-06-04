@@ -14,5 +14,6 @@ return array(
     'Zend\\Mail\\' => array($vendorDir . '/zendframework/zend-mail'),
     'Zend\\Loader\\' => array($vendorDir . '/zendframework/zend-loader'),
     'Zend\\Crypt\\' => array($vendorDir . '/zendframework/zend-crypt'),
+    'Mustache' => array($vendorDir . '/mustache/mustache/src'),
     '' => array($baseDir . '/www/class'),
 );
