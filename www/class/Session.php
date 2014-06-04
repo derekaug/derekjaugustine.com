@@ -34,11 +34,24 @@ class Session
         ini_set('session.cache_limiter', null);
     }
 
-    public static function start(){
-        session_start();
+    /**
+     * @param string $key key to get
+     * @return mixed|null value of session key
+     */
+    public static function get($key){
+        return empty($_SESSION[$key]) ? null : $_SESSION[$key];
     }
 
-    public static function writeClose(){
+    /**
+     * @param string $key key to set
+     * @param mixed $value value to set
+     */
+    public static function set($key, $value){
+        session_start();
+        $_SESSION[$key] = $value;
+        if(is_null($value)){
+            unset($_SESSION[$key]);
+        }
         session_write_close();
     }
 }
