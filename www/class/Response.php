@@ -26,25 +26,19 @@ class Response
                 break;
             default:
                 // redirect is default and save response to session
-                Session::start();
-                $_SESSION[static::SESSION_KEY] = serialize(static::$data);
-                Session::writeClose();
+                Session::set(static::SESSION_KEY, serialize(static::$data));
                 header('Location: ' . static::$redirect);
                 break;
         }
     }
 
     public static function getSessionData(){
-        Session::start();
-        Session::writeClose();
-        return !empty($_SESSION[static::SESSION_KEY]) ? unserialize($_SESSION[static::SESSION_KEY]) : null;
+        $val = Session::get(static::SESSION_KEY);
+        return !empty($val) ? unserialize($val) : null;
     }
 
     public static function clearSessionData(){
-        Session::start();
-        $_SESSION[static::SESSION_KEY] = null;
-        unset($_SESSION[static::SESSION_KEY]);
-        Session::writeClose();
+        Session::set(static::SESSION_KEY, null);
     }
 }
 
