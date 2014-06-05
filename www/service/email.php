@@ -74,6 +74,16 @@ if (!empty($action)) {
                 Response::$data['messages'][] = array('type'=>'error', 'message'=>'Server error, please try again!');
             }
         }
+        else {
+            if(Response::$output === 'redirect'){
+                $session = array(
+                    'email' => $email,
+                    'name' => $name,
+                    'body' => $body
+                );
+                Session::set('email', $session);
+            }
+        }
     }
 }
 
