@@ -39,7 +39,9 @@ class Session
      * @return mixed|null value of session key
      */
     public static function get($key){
-        return empty($_SESSION[$key]) ? null : $_SESSION[$key];
+        session_start();
+        session_write_close();
+        return empty($_SESSION[$key]) ? null : unserialize($_SESSION[$key]);
     }
 
     /**
@@ -48,8 +50,9 @@ class Session
      */
     public static function set($key, $value){
         session_start();
-        $_SESSION[$key] = $value;
+        $_SESSION[$key] = serialize($value);
         if(is_null($value)){
+            $_SESSION[$key] = null;
             unset($_SESSION[$key]);
         }
         session_write_close();
