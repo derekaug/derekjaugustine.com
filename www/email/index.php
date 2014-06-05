@@ -2,6 +2,17 @@
 include_once(__DIR__ . '/../vendor_class/autoload.php');
 Config::init();
 $active_class = 'email';
+
+$email = Session::get('email');
+if(empty($email)){
+    $email['name'] = '';
+    $email['email'] = '';
+    $email['body'] = '';
+    Session::set('email', $email);
+}
+else {
+    Session::set('email', null);
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -34,19 +45,19 @@ $active_class = 'email';
                     <label for="inputName">Your Name</label>
 
                     <div class="form-container">
-                        <input id="inputName" type="text" class="form-control" name="name"/>
+                        <input id="inputName" type="text" class="form-control" name="name" value="<?php echo $email['name']; ?>" />
                     </div>
 
                     <label for="inputEmail">Your Email</label>
 
                     <div class="form-container">
-                        <input id="inputEmail" type="email" class="form-control" name="email"/>
+                        <input id="inputEmail" type="email" class="form-control" name="email" value="<?php echo $email['email']; ?>"/>
                     </div>
 
                     <label for="textareaBody">Your Message</label>
 
                     <div class="form-container">
-                        <textarea id="textareaBody" class="form-control" name="body"></textarea>
+                        <textarea id="textareaBody" class="form-control" name="body"><?php echo $email['body']; ?></textarea>
                     </div>
 
                     <div class="hidden">

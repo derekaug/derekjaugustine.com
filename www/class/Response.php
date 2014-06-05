@@ -26,7 +26,7 @@ class Response
                 break;
             default:
                 // redirect is default and save response to session
-                Session::set(static::SESSION_KEY, serialize(static::$data));
+                Session::set(static::SESSION_KEY, static::$data);
                 header('Location: ' . static::$redirect);
                 break;
         }
@@ -49,7 +49,7 @@ class Response
     public static function getSessionData()
     {
         $val = Session::get(static::SESSION_KEY);
-        return !empty($val) ? unserialize($val) : null;
+        return !empty($val) ? $val : null;
     }
 
     public static function clearSessionData()
