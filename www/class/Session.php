@@ -4,6 +4,9 @@ class Session
 {
     public static function init()
     {
+        $temp = sys_get_temp_dir();
+        session_save_path($temp);
+
         $session_length = 60 * 60 * 24; // 1 day for how long session will last
         $session_regenerate_length = 60 * 15; // regenerate session id every 15 minutes
 
