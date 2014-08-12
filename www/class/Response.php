@@ -36,7 +36,7 @@ class Response
     {
         $rvalue = '';
         $stored = self::getSessionData();
-        $messages = !empty($stored['messages']) ? $stored['messages'] : null;
+        $messages = !empty($stored['messages']) ? $stored['messages'] : array();
         $engine = new Mustache_Engine();
         $template = file_get_contents(Config::$root . '/templates/message.mustache');
         foreach($messages as $m){
