@@ -68,6 +68,7 @@ class Config
             static::$contact_to = 'augshow@gmail.com';
             static::$contact_from = 'no-reply@' . static::$host;
             Session::init();
+            
         }
     }
 
