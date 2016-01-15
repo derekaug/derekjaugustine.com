@@ -38,6 +38,7 @@ class Config
                 case 'www.derekaugustine.com':
                 case 'derekaug.com':
                 case 'www.derekaug.com':
+                case 'derekjaugustine-derekaug.rhcloud.com/':
                     static::$environment = 'production';
                     static::$asset_type = 'min';
                     break;
@@ -52,7 +53,7 @@ class Config
 
             static::$root = __DIR__ . '/../';
             static::$smtp = array(
-                'host' => 'email-smtp.us-east-1.amazonaws.com',
+                'host' => 'smtp.mailgun.org',
                 'port' => '587',
                 'auth' => array(
                     'type' => 'login',
