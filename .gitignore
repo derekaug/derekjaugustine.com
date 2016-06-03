@@ -3,3 +3,4 @@ www/config.json
 derekjaugustine.com.iml
 .vagrant
 .idea
+.env
