@@ -1,7 +1,8 @@
 {
     "require" : {
         "zendframework/zend-mail": "2.3.*@dev",
-        "mustache/mustache": "*"
+        "mustache/mustache": "*",
+        "vlucas/phpdotenv": "^2.2"
     },
     "config"  : {
         "vendor-dir": "www/vendor_class/",
