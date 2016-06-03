@@ -120,7 +120,7 @@ class Config
     public static function getCurrentURL()
     {
         // from http://css-tricks.com/snippets/php/get-current-page-url/
-        $url = @($_SERVER["HTTPS"] != 'on') ? 'http://' . $_SERVER["SERVER_NAME"] : 'https://' . $_SERVER["SERVER_NAME"];
+        $url = @($_SERVER["HTTPS"] != 'on') ? 'http://' . $_SERVER["HTTP_HOST"] : 'https://' . $_SERVER["HTTP_HOST"];
         $url .= (intval($_SERVER["SERVER_PORT"]) !== 80) ? ":" . $_SERVER["SERVER_PORT"] : "";
         $url .= $_SERVER["REQUEST_URI"];
         return $url;
