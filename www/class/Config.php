@@ -24,6 +24,9 @@ class Config
     public static function init()
     {
         if (!static::$inited) {
+            $de = new Dotenv\Dotenv(__DIR__);
+            $de->load();
+
             static::$inited = true;
 
             // get host first
