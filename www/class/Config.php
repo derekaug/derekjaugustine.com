@@ -30,7 +30,7 @@ class Config
             static::$host = $_SERVER['SERVER_NAME'];
             static::$port = $_SERVER['SERVER_PORT'];
 
-            static::$canonical_host = 'derekjaugustine.com';
+            static::$canonical_host = 'derekaug.com';
             switch (static::$host) {
                 case 'derekjaugustine.com':
                 case 'www.derekjaugustine.com':
