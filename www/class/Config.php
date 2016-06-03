@@ -30,8 +30,7 @@ class Config
             static::$inited = true;
 
             // get host first
-            static::$host = $_SERVER['SERVER_NAME'];
-            static::$port = $_SERVER['SERVER_PORT'];
+            static::$host = $_SERVER['HTTP_HOST'];
 
             static::$canonical_host = 'derekaug.com';
             switch (static::$host) {
@@ -65,7 +64,7 @@ class Config
                 )
             );
 
-            static::$base_url = 'http://' . static::$host . (static::$port !== 80 ? ':' . static::$port : '') . '/';
+            static::$base_url = 'http://' . static::$host . '/';
             static::$body_class = 'bg-' . rand(1, 10);
             static::$contact_to = 'augshow@gmail.com';
             static::$contact_from = 'no-reply@' . static::$host;
@@ -121,7 +120,6 @@ class Config
     {
         // from http://css-tricks.com/snippets/php/get-current-page-url/
         $url = @($_SERVER["HTTPS"] != 'on') ? 'http://' . $_SERVER["HTTP_HOST"] : 'https://' . $_SERVER["HTTP_HOST"];
-        $url .= (intval($_SERVER["SERVER_PORT"]) !== 80) ? ":" . $_SERVER["SERVER_PORT"] : "";
         $url .= $_SERVER["REQUEST_URI"];
         return $url;
     }
