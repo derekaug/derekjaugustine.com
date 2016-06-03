@@ -41,7 +41,6 @@ class Config
                 case 'www.derekaugustine.com':
                 case 'derekaug.com':
                 case 'www.derekaug.com':
-                case 'derekjaugustine-derekaug.rhcloud.com/':
                     static::$environment = 'production';
                     static::$asset_type = 'min';
                     break;
