@@ -41,12 +41,12 @@ shuffle($favorites);
                     I am a <?php echo $age_interval->y; ?>-year-old developer in Lincoln, NE, USA. I've been writing
                     code since I can remember, and I've dabbled with many different languages, frameworks, and tools.
                     When I'm not developing, you can find me riding my bike, brewing some beer, fishing with a buddy, or
-                    exploring various Lincoln establishments.
+                    exploring various Lincoln&nbsp;establishments.
                 </p>
 
                 <h3>Studies</h3>
                 <p>
-                    Some technologies I'm currently learning or wanting to investigate.
+                    Some technologies I'm currently learning or wanting to&nbsp;investigate.
                 </p>
                 <ul class="list">
                     <?php foreach ($research as $res) { ?>
@@ -62,7 +62,7 @@ shuffle($favorites);
 
                 <h3>Favorites</h3>
                 <p>
-                    A few of the things that I like besides programming.
+                    A few of the things that I like besides&nbsp;programming.
                 </p>
                 <ul class="list">
 

@@ -53,19 +53,19 @@ $unl_tech = json_decode(file_get_contents(Config::$root . '/data/tech-unl.json')
                 <ul>
                     <li>
                         a web portal for brand advocates to participate in discussion with other advocates and compete
-                        to earn rewards from the brand
+                        to earn rewards from the&nbsp;brand
                     </li>
                     <li>
                         a mobile website to facilitate an photo-based scavenger hunt for product in multiple countries
-                        and languages
+                        and&nbsp;languages
                     </li>
                     <li>
                         an analytical tool for a brand to monitor their Facebook posts and determine whether they
-                        were meeting their social goals
+                        were meeting their social&nbsp;goals
                     </li>
                     <li>
-                        various microsites and Facebook tabs for promoting a brand, product, or service through either
-                        an online contest or interactive online experience
+                        various websites and Facebook tabs for promoting a brand, product, or service through either
+                        an online contest or interactive online&nbsp;experience
                     </li>
                 </ul>
             </div>
@@ -99,13 +99,13 @@ $unl_tech = json_decode(file_get_contents(Config::$root . '/data/tech-unl.json')
                         <h5>Projects</h5>
                         <ul>
                             <li>
-                                a college-wide C# library for code reuse and organization
+                                a college-wide C# library for code reuse and&nbsp;organization
                             </li>
                             <li>
-                                an online college election system for chairs &amp; committees
+                                an online college election system for chairs &amp;&nbsp;committees
                             </li>
                             <li>
-                                a surplus auction site used by multiple universities
+                                a surplus auction site used by multiple&nbsp;universities
                             </li>
                         </ul>
                     </div>
@@ -118,13 +118,13 @@ $unl_tech = json_decode(file_get_contents(Config::$root . '/data/tech-unl.json')
                         <h5>Projects</h5>
                         <ul>
                             <li>
-                                an IRB approved research survey for a graduate student at the University of Nebraska–Lincoln
+                                an IRB approved research survey for a graduate student at the University of&nbsp;Nebraska–Lincoln
                             </li>
                             <li>
-                                a tool to track video views and reactions for a marketing firm
+                                a tool to track video views and reactions for a marketing&nbsp;firm
                             </li>
                             <li>
-                                various shell scripts and bug fixes through freelance websites
+                                various shell scripts and bug fixes through freelance&nbsp;websites
                             </li>
                         </ul>
                     </div>

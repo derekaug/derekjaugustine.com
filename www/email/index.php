@@ -35,7 +35,7 @@ else {
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
                 <h2 class="page-header">Email</h2>
 
-                <p>Want to get in touch? Shoot me an email by filling in the form below.</p>
+                <p>Want to get in touch? Shoot me an email by filling in the form&nbsp;below.</p>
 
                 <div id="divMessages"><?php echo Response::getMessages(); ?></div>
 
