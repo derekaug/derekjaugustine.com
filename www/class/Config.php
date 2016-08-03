@@ -64,7 +64,7 @@ class Config
                 )
             );
 
-            static::$base_url = 'http://' . static::$host . '/';
+            static::$base_url = '//' . static::$host . '/';
             static::$body_class = 'bg-' . rand(1, 10);
             static::$contact_to = 'augshow@gmail.com';
             static::$contact_from = 'no-reply@' . static::$host;
