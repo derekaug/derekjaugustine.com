@@ -2,6 +2,7 @@
 include_once(__DIR__ . '/../vendor_class/autoload.php');
 $vendor_js = '/js/vendor.' . Config::$asset_type . '.js';
 $dja_js = '/js/dja.' . Config::$asset_type . '.js';
+$launch = 2014;
 ?>
     <footer id="footer">
         <div class="container">
@@ -35,7 +36,7 @@ $dja_js = '/js/dja.' . Config::$asset_type . '.js';
                         </a>
                     </div>
                     <div id="divCopyright" class="text-center">
-                        &copy; <?php echo date('Y', time()); ?> Derek J. Augustine
+                        &copy; <?php echo $launch . (date('Y') != $launch ? '-' . date('y') : ''); ?> Derek J. Augustine
                     </div>
                 </div>
             </div>

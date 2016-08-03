@@ -14,7 +14,7 @@ html {
 body {
   min-height: 100%;
   margin-bottom: @footer-height;
-  text-shadow: 1px 1px 2px @color-black-dark;
+  text-shadow: 1px 1px 2px @color-black-1;
   background-position: center;
   .lh-background-size(cover);
 
@@ -28,6 +28,7 @@ body {
   .generate-bgs(10);
 
   &:before {
+    @size: 3px;
     content: '';
     width: 100%;
     height: 100%;
@@ -36,10 +37,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: @color-black-dark;
-    .lh-background-image(linear-gradient(@color-black-dark 50%, @color-black-light 50%));
-    .lh-background-size(100% 6px);
-    .lh-opacity(0.75);
+    background: linear-gradient(27deg, @color-black-2 @size, transparent @size) 0 @size,
+      linear-gradient(207deg, @color-black-2 @size, transparent @size) 2*@size 0,
+      linear-gradient(27deg, @color-black-6 @size, transparent @size) 0 2*@size,
+      linear-gradient(207deg, @color-black-6 @size, transparent @size) 2*@size @size,
+      linear-gradient(90deg, @color-black-4 2*@size, transparent 2*@size),
+      linear-gradient(@color-black-5 25%, @color-black-3 25%, @color-black-3 50%, transparent 50%, transparent 75%, @color-black-7 75%, @color-black-7);
+    background-color: @color-black-1;
+    background-size: 4*@size 4*@size;
+    opacity: 0.9;
   }
 
   & > * {
@@ -51,7 +57,7 @@ body {
   &.work #header nav ul li .work,
   &.email #header nav ul li .email {
     // selectors are too specific for my tastes, refactor later
-    background-color: @color-green;
+    background-color: @color-accent;
   }
 }
 
@@ -97,7 +103,7 @@ ul {
 
   #header-text {
     .h3;
-    color: @color-blue-light;
+    color: @color-primary-light;
     width: @header-text-width;
     margin-left: @header-text-margin;
   }
@@ -114,7 +120,7 @@ ul {
     height: @header-avatar-width;
     position: relative;
     display: block;
-    border: 4px solid @color-blue-light;
+    border: 4px solid @color-primary-light;
     overflow: hidden;
 
     img {
@@ -179,7 +185,7 @@ ul {
 
   #divCopyright {
     .opacity(0.5);
-    color: @color-blue-light;
+    color: @color-primary-light;
     font-weight: 700;
     text-shadow: none;
   }
@@ -216,13 +222,13 @@ ul {
   display: block;
   margin: 0;
   color: #FFFFFF;
-  background-color: @color-blue-light;
+  background-color: @color-primary-light;
   padding: 6px 12px;
   font-family: @font-headline;
   text-align: center;
   font-size: 1.2em;
   border: none;
-  text-shadow: 1px 1px 2px @color-black-dark;
+  text-shadow: 1px 1px 2px @color-black-1;
   .lh-transform(skew(-10deg));
   .lh-transform-origin(50%);
   .lh-transition(background-color 0.25s linear, color 0.25s linear);
@@ -235,7 +241,7 @@ ul {
   }
 
   &:hover {
-    background-color: @color-green;
+    background-color: @color-accent;
   }
   &:active {
   }
@@ -243,8 +249,8 @@ ul {
   }
 
   &[disabled=disabled], &:disabled {
-    color: @color-black-light;
-    background-color: @color-black-dark;
+    color: @color-black-4;
+    background-color: @color-black-1;
   }
 }
 
@@ -266,13 +272,13 @@ ul {
       content: '\f165';
     }
 
-    background-color: @color-red;
-    border-color: darken(@color-red, 5%);
+    background-color: @color-warning;
+    border-color: darken(@color-warning, 5%);
   }
 
   &.alert-success {
-    background-color: @color-green;
-    border-color: darken(@color-green, 10%);
+    background-color: @color-accent;
+    border-color: darken(@color-accent, 10%);
 
     &:before {
       content: '\f164';
@@ -282,7 +288,7 @@ ul {
   .close {
     .lh-opacity(0.5);
     &:hover {
-      color: @color-black-dark;
+      color: @color-black-1;
     }
   }
 }
@@ -291,7 +297,7 @@ ul {
 .page-header {
   margin-top: 22px;
   margin-bottom: 11px;
-  border-bottom: 2px solid @color-blue-light;
+  border-bottom: 2px solid @color-primary-light;
 }
 
 .list {
@@ -314,7 +320,7 @@ ul {
     width: 50px;
     height: 50px;
     position: relative;
-    border: 2px solid @color-blue-light;
+    border: 2px solid @color-primary-light;
     overflow: hidden;
     .lh-border-radius(25px);
     .webkit-radius-fix();
@@ -324,7 +330,7 @@ ul {
     .lh-perspective(1000px);
 
     &:hover {
-      border-color: @color-green;
+      border-color: @color-accent;
     }
   }
 
@@ -344,7 +350,6 @@ ul {
     }
   }
 }
-
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {

@@ -1,25 +1,28 @@
 /*global module:false*/
 module.exports = function (grunt) {
-
+    "use strict";
     //Initializing the configuration object
     grunt.initConfig({
 
         // Task configuration
-        less    : {
+        less: {
+            options : {
+                plugins : [ new (require('less-plugin-autoprefix'))({browsers : [ "> 0%" ]}) ]
+            },
             development: {
                 options: {
                     compress: false  //minifying the result
                 },
-                files  : {
+                files: {
                     //compiling frontend.less into frontend.css
                     "www/css/main.comb.css": "www/css/src/main.less"
                 }
             },
-            production : {
+            production: {
                 options: {
                     compress: true  //minifying the result
                 },
-                files  : {
+                files: {
                     //compiling frontend.less into frontend.css
                     "www/css/main.min.css": "www/css/main.comb.css"
                 }
@@ -30,22 +33,22 @@ module.exports = function (grunt) {
                 options: {
                     progressive: true
                 },
-                files  : [
+                files: [
                     {
                         expand: true,               // Enable dynamic expansion
-                        cwd   : 'www/img/src/bg/',     // Src matches are relative to this path
-                        src   : ['*.jpg', '*.jpeg'],       // Actual patterns to match
-                        dest  : 'www/img/bg/'          // Destination path prefix
+                        cwd: 'www/img/src/bg/',     // Src matches are relative to this path
+                        src: ['*.jpg', '*.jpeg'],       // Actual patterns to match
+                        dest: 'www/img/bg/'          // Destination path prefix
                     }
                 ]
             },
             png: {
-                files  : [
+                files: [
                     {
                         expand: true,               // Enable dynamic expansion
-                        cwd   : 'www/img/src/',     // Src matches are relative to this path
-                        src   : ['*.png'],       // Actual patterns to match
-                        dest  : 'www/img/'          // Destination path prefix
+                        cwd: 'www/img/src/',     // Src matches are relative to this path
+                        src: ['*.png'],       // Actual patterns to match
+                        dest: 'www/img/'          // Destination path prefix
                     }
                 ]
             }
@@ -58,22 +61,15 @@ module.exports = function (grunt) {
                 ]
             },
             options: {
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                boss: true,
-                eqnull: true,
+                node: true,
                 browser: true,
                 globals: {
                     "$": false,
                     "jQuery": false,
                     "Mustache": false,
-                    "GLOBALS": false
+                    "GLOBALS": false,
+                    "module": true,
+                    "browser": true
                 }
             }
         },
@@ -125,31 +121,31 @@ module.exports = function (grunt) {
             }
         },
 
-        watch : {
-            less    : {
-                files  : ['www/css/src/*.less'],
-                tasks  : ['less'],
+        watch: {
+            less: {
+                files: ['www/css/src/*.less'],
+                tasks: ['less'],
                 options: {
                     livereload: true
                 }
             },
-            js      : {
-                files  : ['<%= concat.dja.src %>'],
-                tasks  : ['jshint', 'concat:dja', 'uglify:dja'],
+            js: {
+                files: ['<%= concat.dja.src %>'],
+                tasks: ['jshint', 'concat:dja', 'uglify:dja'],
                 options: {
                     livereload: true
                 }
             },
-            vendor_js  : {
+            vendor_js: {
                 files: ['<%= concat.vendor.src %>'],
-                tasks  : ['concat:vendor', 'uglify:vendor'],
+                tasks: ['concat:vendor', 'uglify:vendor'],
                 options: {
                     livereload: true
                 }
             },
             imagemin: {
-                files  : ['www/img/src/**/*'],
-                tasks  : ['imagemin'],
+                files: ['www/img/src/**/*'],
+                tasks: ['imagemin'],
                 options: {
                     livereload: true
                 }
