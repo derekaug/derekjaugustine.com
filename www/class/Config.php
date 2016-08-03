@@ -51,6 +51,7 @@ class Config
             static::$current_url = static::getCurrentURL();
             static::$canonical_url = static::getCanonicalURL();
             static::canonicalRedirect();
+            static::sslRedirect();
 
             static::$root = __DIR__ . '/../';
             static::$smtp = array(
@@ -82,6 +83,15 @@ class Config
         return static::buildURL($parsed);
     }
 
+    public static function getSslUrl()
+    {
+        $parsed = parse_url(static::$current_url);
+        if($parsed['scheme'] !== 'https'){
+            $parsed['scheme'] = 'https';
+        }
+        return static::buildURL($parsed);
+    }
+
     /**
      * handles redirection to canonical URL if the current host does not match
      */
@@ -90,6 +100,15 @@ class Config
         if (static::$environment === 'production' && static::$host !== static::$canonical_host) {
             header('HTTP/1.1 301 Moved Permanently');
             header('Location: ' . static::getCanonicalURL());
+            exit();
+        }
+    }
+
+    private static function sslRedirect()
+    {
+        if (static::$environment === 'production' && !static::isSsl()) {
+            header('HTTP/1.1 301 Moved Permanently');
+            header('Location: ' . static::getSslUrl());
             exit();
         }
     }
@@ -119,9 +138,14 @@ class Config
     public static function getCurrentURL()
     {
         // from http://css-tricks.com/snippets/php/get-current-page-url/
-        $url = @($_SERVER["HTTPS"] != 'on') ? 'http://' . $_SERVER["HTTP_HOST"] : 'https://' . $_SERVER["HTTP_HOST"];
+        $url = !static::isSsl() ? 'http://' . $_SERVER["HTTP_HOST"] : 'https://' . $_SERVER["HTTP_HOST"];
         $url .= $_SERVER["REQUEST_URI"];
         return $url;
+    }
+
+    public static function isSsl()
+    {
+        return @($_SERVER["HTTPS"] == 'on');
     }
 }
 
